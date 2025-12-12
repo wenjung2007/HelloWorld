@@ -17,7 +17,9 @@ spec:
       containers:
       - name: hello
         # Use the name you gave your Docker image
-        image: hello:latest 
+        image: us-central1-docker.pkg.dev/wenjuntoy2/hello-repo/hello:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: gcp-registry-key
